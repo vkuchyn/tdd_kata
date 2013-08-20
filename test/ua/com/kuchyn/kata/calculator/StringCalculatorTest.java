@@ -37,12 +37,24 @@ public class StringCalculatorTest
     }
 
     @Test
-    public void shouldReturnSumWhenTwoNumbers(){
+    public void shouldReturnSumWhenTwoNumbers()
+    {
         //Given
         StringCalculator stringCalculator = new StringCalculator();
         //When
         int actual = stringCalculator.add("2,3");
         //Then
         assertThat(actual, is(5));
+    }
+
+    @Test
+    public void shouldReturnSumWhenLotsOfNumbers()
+    {
+        //Given
+        StringCalculator stringCalculator = new StringCalculator();
+        //When
+        int actual = stringCalculator.add("2,3,4,5,2,3");
+        //Then
+        assertThat(actual, is(19));
     }
 }

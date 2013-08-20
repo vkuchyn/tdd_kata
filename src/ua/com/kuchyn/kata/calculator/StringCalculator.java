@@ -17,17 +17,20 @@ public class StringCalculator
         {
             return 0;
         }
-        String [] numbersArray = numbers.split(",");
+        String[] numbersArray = numbers.split(",");
 
-        if (numbersArray.length > 1){
-            return calculateStringNumbers(numbersArray);
-        }
-        return valueOf(numbers);
+        return calculateStringNumbers(numbersArray);
     }
 
-    private int calculateStringNumbers(String...numbersArray)
+    private int calculateStringNumbers(String... numbersArray)
     {
-        return valueOf(numbersArray[0]) + valueOf(numbersArray[1]);
+        int sum = 0;
+        for (String number : numbersArray)
+        {
+            int intNumber = valueOf(number);
+            sum += intNumber;
+        }
+        return sum;
     }
 
 
