@@ -1,6 +1,6 @@
 package ua.com.kuchyn.kata.calculator;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import static java.lang.Integer.valueOf;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +17,18 @@ public class StringCalculator
         {
             return 0;
         }
+        String [] numbersArray = numbers.split(",");
 
-        throw new NotImplementedException();
+        if (numbersArray.length > 1){
+            return calculateStringNumbers(numbersArray);
+        }
+        return valueOf(numbers);
     }
+
+    private int calculateStringNumbers(String...numbersArray)
+    {
+        return valueOf(numbersArray[0]) + valueOf(numbersArray[1]);
+    }
+
+
 }

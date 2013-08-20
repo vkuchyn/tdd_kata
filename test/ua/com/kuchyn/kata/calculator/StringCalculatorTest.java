@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertThat;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,12 +15,34 @@ import static org.junit.Assert.assertThat;
 public class StringCalculatorTest
 {
     @Test
-    public void shouldReturnZeroWhenEmptyString(){
+    public void shouldReturnZeroWhenEmptyString()
+    {
         //Given
         StringCalculator stringCalculator = new StringCalculator();
         //When
         int actual = stringCalculator.add("");
         //Then
         assertThat(actual, is(0));
+    }
+
+    @Test
+    public void shouldReturnSingleNumber()
+    {
+        //Given
+        StringCalculator stringCalculator = new StringCalculator();
+        //When
+        int actual = stringCalculator.add("23");
+        //Then
+        assertThat(actual, is(23));
+    }
+
+    @Test
+    public void shouldReturnSumWhenTwoNumbers(){
+        //Given
+        StringCalculator stringCalculator = new StringCalculator();
+        //When
+        int actual = stringCalculator.add("2,3");
+        //Then
+        assertThat(actual, is(5));
     }
 }
