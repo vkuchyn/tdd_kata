@@ -57,4 +57,15 @@ public class StringCalculatorTest
         //Then
         assertThat(actual, is(19));
     }
+
+    @Test
+    public void shouldReturnSumWhenDelimeterIsNewLine()
+    {
+        //Given
+        StringCalculator stringCalculator = new StringCalculator();
+        //When
+        int actual = stringCalculator.add("2\n3,4,5\n2,3");
+        //Then
+        assertThat(actual, is(19));
+    }
 }
